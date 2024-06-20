@@ -1,15 +1,11 @@
 // src/index.js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css'; // Import Tailwind CSS
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import axios from "axios";
+import App from "./App";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 
-reportWebVitals();
+root.render(<App />);
